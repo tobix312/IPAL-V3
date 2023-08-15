@@ -20,18 +20,19 @@ const Slider = ({imageScr, title, subTitle, flipped}) => {
                     <p>{subTitle}</p>
                 </div>
             </>
-            )
+            );
         }
         else {
             return (
                 <>
-                <div className="slider">
-                    <img src={imageScr} alt="Meeting" className="slider_image"/>
-                    <div className = "slider_content">
-                        <h1 className="slider_title">{title}</h1>
-                        <p>{subTitle}</p>
+                <div className="slider_content">
+                    <h1 className="slider_title">{title}</h1>
+                    <p>{subTitle}</p>
                     </div>
-                </div>
+                    <img src={imageScr} alt="Meeting" className="slider_image"/>
+                        
+                    
+                
                 </>
            );
         }
