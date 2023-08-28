@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import {FiX, FiMenu} from "react-icons/fi"
 
 const navbarLinks = [{
     url:"./home", title: "home"
 }]
-const navbar = ({navbarLinks}) => {
+const Navbar = ({navbarLinks}) => {
+
+    const [menuClicked, setMenuClicked] = useState(null);
+
+    const toggleMenuClick = () => {
+      setMenuClicked(!menuClicked);
+    };
+  
+
     return <nav className="navbar">
         <span className="navbar-IPAL">IPAL</span>
-        <ul className="navbar-list">
+
+        {menuClicked ?(
+             <FiX size={25} className="navebar-menu" onClick={toggleMenuClick}/>
+             ) :(
+                <FiMenu size={25} className="navebar-menu" onClick={toggleMenuClick}/>
+             )}
+        
+        
+        
+
+        <ul className= {menuClicked ? "navbar-list" : "navbar-list navbar-list-active" }>
             {navbarLinks.map(item => {
             return (<li className="navbar-item"> key={item.title}
                 <a className="navbar-link" href={item.url}>
@@ -20,4 +38,4 @@ const navbar = ({navbarLinks}) => {
     </nav>;
 };
 
-export default navbar;
+export default Navbar;
