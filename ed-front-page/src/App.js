@@ -5,7 +5,7 @@ import Meeting from './assets/Meeting.jpg';
 import Girl from './assets/Girl.jpg';
 import Slider from './components/Slider';
 import Study from './assets/Study.jpg';
-import Navbar from './components/Navbar.js'
+import Navbar from './components/Navbar.js';
 
 const navbarLinks = [
   {url: "#", title: "Home"},
